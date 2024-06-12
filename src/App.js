@@ -1,16 +1,18 @@
-// import Playlist from "./components/Playlist";
 import SearchBar from "./components/SearchBar";
-// import SearchResults from "./components/SearchResults";
-// import Track from "./components/Track";
-// import Tracklist from "./components/Tracklist";
+import SearchResults from "./components/SearchResults";
+import { useState } from "react";
 import './App.css';
 
+
+
 function App() {
+  const [result, setResults] = useState("");
 
   return (
     <div className="App">
-      <button>Save To Spotify</button>
       <SearchBar />
+      <SearchResults />
+      <button>Save To Spotify</button>
     </div>
   );
 }
