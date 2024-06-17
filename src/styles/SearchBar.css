@@ -1,0 +1,31 @@
+.SearchBar {
+    padding: 100px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: min-content;
+    justify-content: center;
+    margin: auto;
+}
+
+.input {
+    margin-bottom: 40px;
+    border-radius: 5px;
+    width: 20em;
+    height: 4em;
+    text-align: center;
+    font-size: 1em;
+}
+
+.search {
+    width: 8em;
+    height: 3em;
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(10, 1, 59);
+    text-transform: uppercase;
+}
+
+.search:hover {
+    background-color: rgb(117, 67, 197);
+}
