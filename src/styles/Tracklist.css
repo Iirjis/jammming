@@ -1,0 +1,11 @@
+.tracks {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.name
+.artist
+.album {
+    justify-content: space-between;
+}
