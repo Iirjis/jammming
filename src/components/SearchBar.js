@@ -1,21 +1,22 @@
-import { useState } from "react";
-import "../styles/SearchBar.css"
+import styles from "../styles/SearchBar.module.css"
 
-function SearchBar() {
-    const [search, setSearch] = useState("")
-
-    function handleChange(e) {
-        setSearch(e.target.value);
+function SearchBar({ setSearchValue, handleSearch, searchValue }) {
+    function handleSubmit(e) {
+        e.preventDefault();
+        handleSearch();
     }
 
     return (
-        <div className="SearchBar">
-            <input className="input"
-                type="text"
-                placeholder="What do you want to listen?"
-                value={search} 
-                onChange={handleChange}/>
-            <button className="search" type="submit">Search</button>
+        <div className={styles.SearchBar}>
+            <label>
+                <input className={styles.input}
+                    type="text"
+                    name="song-input"
+                    placeholder="What do you want to listen?"
+                    value={searchValue} 
+                    onChange={e => setSearchValue(e.target.value)}/>
+            </label>
+            <button className={styles.search} type="submit" onClick={handleSubmit}>Search</button>
         </div>
     )
 };

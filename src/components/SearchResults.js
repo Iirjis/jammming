@@ -1,10 +1,14 @@
-import { useState } from "react";
+import Tracklist from "./Tracklist";
 
-function SearchResults() {
-
+function SearchResults({ searchResults }) {
 
     return (
-        <h2>Results</h2>
+        <div className="searchResults">
+            <h2>Results</h2>
+            <Tracklist
+                tracks={searchResults}
+            />
+        </div>
     )
 };
 
