@@ -12,7 +12,7 @@ body {
 }
 
 .header {
-  background-color: rgb(10, 1, 59);
+  background-color: rgb(20, 19, 27);
   margin-top: 0;
   height: 60px;
   padding-top: 15px;
@@ -20,4 +20,10 @@ body {
 
 .header span {
   color: rgb(117, 67, 197);
+}
+
+.results_container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }

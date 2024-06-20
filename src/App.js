@@ -1,12 +1,15 @@
 import SearchBar from "./components/SearchBar";
 import SearchResults from "./components/SearchResults";
+import Playlist from "./components/Playlist";
 import { useState } from "react";
 import styles from "./App.module.css";
 
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
-  const [searchValue, setSearchValue] = useState("")
+  const [searchValue, setSearchValue] = useState("");
+  const [playlistName, setPlaylistName] = useState("");
+  const [playlist, setPlaylist] = useState([]);
 
   function handleSearch() {
     setSearchResults([
@@ -26,8 +29,15 @@ function App() {
           handleSearch={handleSearch}
           searchValue={searchValue} 
       />
-      <SearchResults searchResults={searchResults} />
-      <button>Save To Spotify</button>
+      <div className={styles.results_container}>
+          <SearchResults 
+              searchResults={searchResults} />
+          <Playlist 
+              playlist={playlist}
+              playlistName={playlistName}
+              setPlaylistName={setPlaylistName}   
+        />
+      </div>
     </div>
   );
 }

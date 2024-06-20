@@ -1,0 +1,11 @@
+.track_container {
+}
+
+.track_info_container {
+    display: inline-flex;
+    font-size: 0.8em;
+}
+
+.track_spacer {
+    padding: 0 5px;
+}
