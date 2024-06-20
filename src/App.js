@@ -27,6 +27,10 @@ function App() {
     }
   }
 
+  function handleRemoveSongs(track) {
+      setPlaylist(playlist.filter((item) => item !== track));
+  }
+
   return (
     <div className={styles.App}>
       <h1 className={styles.header}>Ja<span>mmm</span>ing</h1>
@@ -43,7 +47,8 @@ function App() {
           <Playlist 
               playlist={playlist}
               playlistName={playlistName}
-              setPlaylistName={setPlaylistName}   
+              setPlaylistName={setPlaylistName}
+              handleRemoveSongs={handleRemoveSongs}   
           />
       </div>
     </div>
