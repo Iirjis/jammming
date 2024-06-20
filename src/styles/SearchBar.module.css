@@ -22,8 +22,9 @@
     height: 3em;
     border-radius: 20px;
     color: white;
-    background-color: rgb(10, 1, 59);
+    background-color: rgb(20, 19, 27);
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .search:hover {

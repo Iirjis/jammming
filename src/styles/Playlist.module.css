@@ -1,0 +1,36 @@
+.playlist_container {
+    background-color: rgba(20, 19, 27, 0.9);
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    width: 350px;
+    height: 800px;
+    text-align: left;
+    padding: 10px 20px;
+    box-shadow: 5px 5px 20px 5px black;
+}
+
+.input_container {
+    background-color: rgba(20, 19, 27, 0);
+    color: white;
+    height: 3em;
+    font-size: 1.5em;
+    font-weight: 900;
+    outline: none;
+    border: 0;
+}
+
+.save {
+    width: 11em;
+    height: 3em;
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(20, 19, 27);
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+.save:hover {
+    background-color: rgb(117, 67, 197);
+}
