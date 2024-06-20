@@ -1,7 +1,7 @@
 import Track from "./Track";
 
-function Tracklist({ tracks }) {
-  
+function Tracklist({ tracks, handlePlaylist, add }) {
+
       return (
         <div>
             {tracks.map((track) =>
@@ -10,6 +10,8 @@ function Tracklist({ tracks }) {
                   name={track.name}
                   artist={track.artist}
                   album={track.album}
+                  handleClick={() => handlePlaylist(track)}
+                  add={add}
               />
             )}
         </div>
