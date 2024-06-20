@@ -1,11 +1,14 @@
-.track_container {
-}
-
 .track_info_container {
     display: inline-flex;
     font-size: 0.8em;
+    width: 100%;
 }
 
 .track_spacer {
     padding: 0 5px;
+}
+
+.add_track {
+    cursor: pointer;
+    margin-left: auto;
 }

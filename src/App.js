@@ -19,7 +19,13 @@ function App() {
       { name: "Can't Get Enough", artist: "Jennifer Lopez", album: "This Is Me...Now", id: 3 }
     ]);
     setSearchValue("");
-}
+  }
+
+  function handleAddSongs(track) {
+    if (!playlist.includes(track)) {
+      setPlaylist((prev) => [track, ...prev]);
+    }
+  }
 
   return (
     <div className={styles.App}>
@@ -31,12 +37,14 @@ function App() {
       />
       <div className={styles.results_container}>
           <SearchResults 
-              searchResults={searchResults} />
+              searchResults={searchResults} 
+              handleAddSongs={handleAddSongs}    
+          />
           <Playlist 
               playlist={playlist}
               playlistName={playlistName}
               setPlaylistName={setPlaylistName}   
-        />
+          />
       </div>
     </div>
   );
