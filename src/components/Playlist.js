@@ -1,7 +1,7 @@
 import Tracklist from "./Tracklist";
 import styles from "../styles/Playlist.module.css"
 
-function Playlist({ playlistName, setPlaylistName, playlist }) {
+function Playlist({ playlistName, setPlaylistName, playlist, handleRemoveSongs }) {
 
     return (
         <div className={styles.playlist_container}>
@@ -14,6 +14,8 @@ function Playlist({ playlistName, setPlaylistName, playlist }) {
             />
             <Tracklist 
                 tracks={playlist}
+                handlePlaylist={handleRemoveSongs}
+                add={false}
             />
             <button className={styles.save}>Save To Spotify</button>
         </div>

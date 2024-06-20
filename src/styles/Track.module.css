@@ -11,4 +11,15 @@
 .add_track {
     cursor: pointer;
     margin-left: auto;
+    align-self: center;
+    background-color: rgba(20, 19, 27, 0);
+    color: white;
+    border: 0;
+    width: 3em;
+    height: 3em;
+}
+
+.add_track:hover {
+    border-radius: 50%;
+    border: 1px solid rgb(117, 67, 197);
 }
