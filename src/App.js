@@ -8,7 +8,6 @@ import Spotify from "./utils/Spotify";
 
 import styles from "./App.module.css";
 
-
 function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [searchValue, setSearchValue] = useState("");
@@ -39,8 +38,15 @@ function App() {
       setPlaylist(playlist.filter((item) => item !== track));
   }
 
-  function handleSavePlaylist() {
-    const trackUris = playlist.map(track => track.uri)
+  async function handleSavePlaylist() {
+    try {
+      if (playlist.length > 0) {
+        await Spotify.handleCreateNewPlaylist(playlist, playlistName);
+        setPlaylist([]);
+      }
+    } catch (error) {
+      console.log(`Error handling save playlist: ${error}`)
+    }
   }
 
   return (
