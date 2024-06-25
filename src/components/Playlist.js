@@ -1,7 +1,8 @@
 import Tracklist from "./Tracklist";
 import styles from "../styles/Playlist.module.css"
+import { useState } from "react";
 
-function Playlist({ playlistName, setPlaylistName, playlist, handleRemoveSongs }) {
+function Playlist({ playlistName, setPlaylistName, playlist, handleRemoveSongs, handleSavePlaylist }) {
 
     return (
         <div className={styles.playlist_container}>
@@ -17,7 +18,16 @@ function Playlist({ playlistName, setPlaylistName, playlist, handleRemoveSongs }
                 handlePlaylist={handleRemoveSongs}
                 add={false}
             />
-            <button className={styles.save}>Save To Spotify</button>
+            <button
+                onClick={() => {
+                    if (playlist.length > 0) {
+                        handleSavePlaylist();
+                    }
+                }}
+                className={styles.save}
+            >
+                Save To Spotify
+            </button>
         </div>
     )
 };
