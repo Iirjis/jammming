@@ -8,7 +8,7 @@ import styles from "./App.module.css";
 function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [playlistName, setPlaylistName] = useState("");
+  const [playlistName, setPlaylistName] = useState("My Playlist");
   const [playlist, setPlaylist] = useState([]);
 
   function handleSearch() {
@@ -31,6 +31,10 @@ function App() {
       setPlaylist(playlist.filter((item) => item !== track));
   }
 
+  function handleSavePlaylist() {
+    const trackUris = playlist.map(track => track.uri)
+  }
+
   return (
     <div className={styles.App}>
       <h1 className={styles.header}>Ja<span>mmm</span>ing</h1>
@@ -48,7 +52,8 @@ function App() {
               playlist={playlist}
               playlistName={playlistName}
               setPlaylistName={setPlaylistName}
-              handleRemoveSongs={handleRemoveSongs}   
+              handleRemoveSongs={handleRemoveSongs}
+              handleSavePlaylist={handleSavePlaylist}   
           />
       </div>
     </div>
