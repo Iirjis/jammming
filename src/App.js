@@ -1,7 +1,11 @@
 import SearchBar from "./components/SearchBar";
 import SearchResults from "./components/SearchResults";
 import Playlist from "./components/Playlist";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
+
+import Spotify from "./utils/Spotify";
+
 import styles from "./App.module.css";
 
 
@@ -11,15 +15,19 @@ function App() {
   const [playlistName, setPlaylistName] = useState("My Playlist");
   const [playlist, setPlaylist] = useState([]);
 
-  function handleSearch() {
-    setSearchResults([
-      { name: "Faster", artist: "Within Temptation", album: "The Unforgiving", id: 0 },
-      { name: "Paint The Town Red", artist: "Doja Cat", album: "Scarlet", id: 1 },
-      { name: "Mennyt mies", artist: "J. Karjalainen", album: "Et ole yksin", id: 2 },
-      { name: "Can't Get Enough", artist: "Jennifer Lopez", album: "This Is Me...Now", id: 3 }
-    ]);
-    setSearchValue("");
-  }
+  useEffect(() => {
+    Spotify.getToken();
+  }, []);
+
+  async function handleSearch() {
+    try {
+      const results = await Spotify.search(searchValue);
+      setSearchResults(results);
+      setSearchValue("");
+    } catch (error) {
+      console.log(`Error in App.js handleSearch: ${error}`)
+    }
+  };
 
   function handleAddSongs(track) {
     if (!playlist.includes(track)) {

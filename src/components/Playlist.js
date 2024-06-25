@@ -1,6 +1,5 @@
 import Tracklist from "./Tracklist";
 import styles from "../styles/Playlist.module.css"
-import { useState } from "react";
 
 function Playlist({ playlistName, setPlaylistName, playlist, handleRemoveSongs, handleSavePlaylist }) {
 
