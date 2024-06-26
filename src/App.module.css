@@ -27,3 +27,17 @@ body {
   width: 100%;
   justify-content: center;
 }
+
+.footer {
+  margin-top: 200px;
+}
+
+.footer:hover {
+  color: black;
+}
+
+@media only screen and (max-width: 500px) {
+	.results_container {
+    flex-direction: column;
+	}
+}

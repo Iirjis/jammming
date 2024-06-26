@@ -11,7 +11,7 @@ import styles from "./App.module.css";
 function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [playlistName, setPlaylistName] = useState("My Playlist");
+  const [playlistName, setPlaylistName] = useState("");
   const [playlist, setPlaylist] = useState([]);
 
   useEffect(() => {
@@ -70,6 +70,9 @@ function App() {
               handleSavePlaylist={handleSavePlaylist}   
           />
       </div>
+      <footer>
+        <h3 className={styles.footer}>HELLO!</h3>
+      </footer>
     </div>
   );
 }
