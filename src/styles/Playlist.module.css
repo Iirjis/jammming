@@ -3,11 +3,12 @@
     display: flex;
     flex-direction: column;
     margin-left: 50px;
-    width: 350px;
+    width: 450px;
     height: 800px;
     text-align: left;
     padding: 10px 20px;
     box-shadow: 5px 5px 20px 5px black;
+    overflow: auto;
 }
 
 .input_container {
@@ -33,4 +34,11 @@
 
 .save:hover {
     background-color: rgb(117, 67, 197);
+}
+
+@media only screen and (max-width: 500px) {
+	.playlist_container {
+    width: 80%;
+    margin: 10% auto;
+	}
 }
