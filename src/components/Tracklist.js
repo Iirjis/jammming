@@ -4,7 +4,7 @@ function Tracklist({ tracks, handlePlaylist, add }) {
 
       return (
         <div>
-            {tracks.map((track) =>
+            {tracks?.map((track) =>
               <Track 
                   key={track.id}
                   name={track.name}
